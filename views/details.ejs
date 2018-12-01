@@ -1,0 +1,40 @@
+<% include partials/header%>
+
+<div class="container">
+        <header class="jumbotron">
+            <div class="container">
+            <h1><%= parsedData2["title"]%></h1>
+            <% var image = parsedData2["image_url"]%>
+            <div class="row text-center">
+            <div class="col-lg-12">
+            <img src= "<%= image %>" style="margin-top: 10%; width=300px height=300px">
+            </div>
+            
+            </div>
+            <p>Type: <%= parsedData2["type"]%></p>
+            <% if(parsedData2["episodes"] == null){ %>
+                   <p>Number of episodes: Currently airing</p>
+                 <% } else{ %>  
+                   <p>Number of episodes: <%= parsedData2["episodes"] %></p>
+                <% } %>
+            <p>Status: <%= parsedData2["status"]%></p>
+            <p>Duration: <%= parsedData2["duration"]%></p>
+            <p>Age: <%= parsedData2["rating"] %></p>
+            <p>Score: <%= parsedData2["score"]%></p>
+            <p>Scored by: <%= parsedData2["scored_by"]%> people</p>
+            <p>Rank: <%= parsedData2["rank"]%></p>
+            <p>Popularity: <%= parsedData2["popularity"]%></p>
+            <p style="font-size: 95%"><span style="font-size: 21px;">Synopsis:</span> <%= parsedData2["synopsis"]%></p>
+            <p>Watch trailer:</p>
+            <% if(parsedData2["trailer_url"] == null){ %>
+                    <p>Trailer is not awalible</p>
+            <% } else{ %>  
+                               <iframe width="420" height="315" src="<%= parsedData2["trailer_url"] %>">
+                <% } %>
+            </iframe>
+            </div>
+            
+        </header>
+    
+
+<% include partials/footer%>

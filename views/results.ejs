@@ -1,0 +1,14 @@
+<% include partials/header%>
+    <div class ="container">
+    <header class="jumbotron">
+<p style="font-size: 40px;">Results for you search: </p>
+<% parsedData["results"].forEach(function(movie){ %>
+    <li> <%= movie["title"]%> </li>
+    <form action="/details/<%= movie["mal_id"] %>" id="parms" method="GET">
+ <button type="submit" class="btn btn-info">Details</button>
+</form>
+<% }) %>
+</header>
+</div>
+
+<% include partials/footer%>
