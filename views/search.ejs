@@ -5,12 +5,12 @@
     </div>
         <div class="row text-center" style="display:flex; flex-wrap: wrap">
     <% for(var i=0; i< 12; i++) {%>
-        <div class= "col-md-3 col sm-6">
+        <div class= "col-md-3 col-sm-6">
             <div class="thumbnail">
-            <%= parsedDataTopAnime["top"][i]["title"] %>
-            <img src="<%= parsedDataTopAnime["top"][i]["image_url"]%>">
+            
+            <img src="<%= parsedDataTopAnime["top"][i]["image_url"]%>" style="height: 342px;">
             <form action="/details/<%= parsedDataTopAnime["top"][i]["mal_id"] %>" id="parms" method="GET">
-                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 2px;">Primary</button>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 2px;"><%= parsedDataTopAnime["top"][i]["title"] %></button>
             </form>
             </div>
         </div>
