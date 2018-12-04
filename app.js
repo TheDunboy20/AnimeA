@@ -9,8 +9,8 @@ app.get("/", function(req, res){
         var parsedDataTopAnime = JSON.parse(body);
                 res.render("search", {parsedDataTopAnime: parsedDataTopAnime});
     })
+    
 })
-
 
 //search for anime
 app.get("/results", function(req, res){
@@ -31,6 +31,44 @@ app.get("/details/:id", function(req, res) {
         var parsedData2 = JSON.parse(body);
             res.render("details", {parsedData2: parsedData2});
     })
+})
+app.get("/scheduled", function(req, res) {
+        var d = new Date();
+        var day = d.getDay();
+        var scheduledAnime = "https://api.jikan.moe/v3/schedule/";
+        if (day == 0){
+            var dayilyAnime = scheduledAnime + "sunday";
+            var day = "sunday"
+        }
+        else if (day == 1){
+            var dayilyAnime = scheduledAnime + "monday";
+            var day = "monday"
+        }
+        else if (day == 2){
+            var dayilyAnime = scheduledAnime + "tuesday";
+            var day = "tuesday"
+        }
+        else if (day == 3){
+           var dayilyAnime = scheduledAnime + "wednesday";
+           var day = "wednesday"
+        }
+        else if (day == 4){
+            var dayilyAnime = scheduledAnime + "thursday";
+            var day = "thursday"
+        }
+        else if (day == 5){
+            var dayilyAnime = scheduledAnime + "friday";
+            var day = "friday"
+        }
+        else if (day == 6){
+            var dayilyAnime = scheduledAnime + "saturday";
+            var day = "saturday"
+        }
+        console.log(dayilyAnime);
+        request(dayilyAnime, function(error, response, body) {
+            var parsedDataDailyAnime = JSON.parse(body);
+            res.render("scheduledAnime", {parsedDataDailyAnime: parsedDataDailyAnime});
+       })
 })
 
 

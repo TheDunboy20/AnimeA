@@ -1,21 +1,16 @@
 {
   "name": "animefun",
   "version": "1.0.0",
-  "description": "Web app creted by me for fun you can freerly downlaod the project create your own versions. If you see some mistake or some improvement that can be done plese message me.",
+  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Marian Smarik",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "request": "^2.88.0"
-  },
-  "devDependencies": {},
-  "keywords": [
-    "jikan",
-    "api"
-  ]
+  }
 }

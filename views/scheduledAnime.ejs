@@ -1,0 +1,150 @@
+
+<% include partials/header%>
+<div class ="container">
+    <header class="jumbotron">
+        <% var d = new Date(); %>
+        <% var day2 = d.getDay();%>
+        <h1>Scheduled anime</h1>
+            </header>
+        <% console.log(day2)%>
+          <div class="row text-center" style="display:flex; flex-wrap: wrap">
+        
+        <% if (day2== 0) { %> <!-- BEGGINING OF SUNDAY-->
+        <% for(var i=0; i< 6; i++) {%>
+        <div class="col-lg-4">
+        <div class="thumbnail">
+            <img src="<%= parsedDataDailyAnime["sunday"][i]["image_url"]%>" style="height: 342px;">
+            <form action="/details/<%= parsedDataDailyAnime["sunday"][i]["mal_id"] %>" id="parms" method="GET">
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 2px;"><%= parsedDataDailyAnime["sunday"][i]["title"] %></button>
+            </form>
+            </div>
+            </div>
+            <% }%>
+            <% } %>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <% if (day2== 1) { %> <!-- BEGGINING OF MONDAY-->
+        <% for(var i=0; i< 6; i++) {%>
+        <div class="col-lg-4">
+        <div class="thumbnail">
+            <img src="<%= parsedDataDailyAnime["monday"][i]["image_url"]%>" style="height: 342px;">
+            <form action="/details/<%= parsedDataDailyAnime["monday"][i]["mal_id"] %>" id="parms" method="GET">
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 2px;"><%= parsedDataDailyAnime["monday"][i]["title"] %></button>
+            </form>
+            </div>
+            </div>
+            <% }%>
+            <% } %>
+        
+        
+        
+        
+        
+        
+        
+        <% if (day2== 2) { %> <!-- BEGGINING OF TUESDAY-->
+        <% for(var i=0; i< 6; i++) {%>
+        <div class="col-lg-4">
+        <div class="thumbnail">
+            <img src="<%= parsedDataDailyAnime["tuesday"][i]["image_url"]%>" style="height: 342px;">
+            <form action="/details/<%= parsedDataDailyAnime["tuesday"][i]["mal_id"] %>" id="parms" method="GET">
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 2px;"><%= parsedDataDailyAnime["tuesday"][i]["title"] %></button>
+            </form>
+            </div>
+            </div>
+            <% }%>
+            <% } %>
+            
+            
+            
+            
+            
+            
+        <% if(day2 == 3) { %><!-- BEGGINING OF WENDSDAY-->
+        <% for(var i=0; i< 6; i++) {%>
+        <div class="col-lg-4">
+        <div class="thumbnail">
+            
+            
+            <img src="<%= parsedDataDailyAnime["wednesday"][i]["image_url"]%>" style="height: 342px;">
+            <form action="/details/<%= parsedDataDailyAnime["wednesday"][i]["mal_id"] %>" id="parms" method="GET">
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 2px;"><%= parsedDataDailyAnime["wednesday"][i]["title"] %></button>
+            </form>
+            </div>
+            </div>
+            <% }%>
+            <% } %>
+            
+            
+            
+            
+            
+            
+            
+            <% if(day2 == 4) { %><!-- BEGGINING OF THURSDAY-->
+        <% for(var i=0; i< 6; i++) {%>
+        <div class="col-lg-4">
+        <div class="thumbnail">
+            
+            
+            <img src="<%= parsedDataDailyAnime["thursday"][i]["image_url"]%>" style="height: 342px;">
+            <form action="/details/<%= parsedDataDailyAnime["thursday"][i]["mal_id"] %>" id="parms" method="GET">
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 2px;"><%= parsedDataDailyAnime["thursday"][i]["title"] %></button>
+            </form>
+            </div>
+            </div>
+            <% }%>
+            <% } %>
+            
+            
+            
+            
+            
+            <% if(day2 == 5) { %><!-- BEGGINING OF FRIDAY-->
+        <% for(var i=0; i< 6; i++) {%>
+        <div class="col-lg-4">
+        <div class="thumbnail">
+            
+            
+            <img src="<%= parsedDataDailyAnime["friday"][i]["image_url"]%>" style="height: 342px width: 100%;">
+            <form action="/details/<%= parsedDataDailyAnime["friday"][i]["mal_id"] %>" id="parms" method="GET">
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 2px;"><%= parsedDataDailyAnime["friday"][i]["title"] %></button>
+            </form>
+            </div>
+            </div>
+            <% }%>
+            <% } %>
+            
+            
+            
+            
+            
+            
+            <% if(day2 == 6) { %><!-- BEGGINING OF SATURDAY-->
+        <% for(var i=0; i< 6; i++) {%>
+        <div class="col-lg-4">
+        <div class="thumbnail">
+            
+            
+            <img src="<%= parsedDataDailyAnime["saturday"][i]["image_url"]%>" style="height: 342px width: 100%;">
+            <form action="/details/<%= parsedDataDailyAnime["saturday"][i]["mal_id"] %>" id="parms" method="GET">
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 2px;"><%= parsedDataDailyAnime["saturday"][i]["title"] %></button>
+            </form>
+            </div>
+            </div>
+            <% }%>
+            <% } %>
+            
+    </div>
+</div>
